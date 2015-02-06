@@ -20,10 +20,15 @@ module Puppet::Confiner
   #   confine :true { ... }
   #
   # @param hash [Hash<{Symbol => Object}>] hash of confines
+  # @param block [Proc] the optional block for a block confine.
   # @return [void]
   # @api public
   #
-  def confine(hash)
+  def confine(hash = {}, &block)
+    if block
+      raise 'non-empty hash given with block.' unless hash.empty?
+      hash[:block] = block
+    end
     confine_collection.confine(hash)
   end
 
