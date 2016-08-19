@@ -11,7 +11,8 @@
 --no-transitive-tag api
 --template-path yardoc/templates
 --files CO*.md,api/**/*.md
---api public
---api private
+#--api public
+#--api private
 --hide-void-return
+--exclude lib/puppet/vendor/
 lib/**/*.rb

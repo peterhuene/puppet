@@ -1,6 +1,6 @@
 # Perform regexp replacement on a string or array of strings.
 #
-# @example
+# @example foo
 #
 # Get the third octet from the node's IP address:
 #
